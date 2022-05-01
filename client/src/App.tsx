@@ -1,13 +1,14 @@
 import React from 'react';
-import './styles/_global.scss'
-import { PageHeader } from 'antd'
+import './styles/_global.scss';
+import { PageHeader } from 'antd';
+import Layout from './layout';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <PageHeader title='PORTFOLIO'>
+    <Layout>
+      <PageHeader title='PORTFOLIO' >
       </PageHeader>
-    </div>
+    </Layout>
   );
 }
 

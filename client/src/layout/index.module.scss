@@ -1,0 +1,17 @@
+@import "../styles/_global.scss";
+@import '../styles/_responsive.scss';
+
+.content {
+  min-height: 90vh;
+  background-color: darkgrey;
+  color: black;
+}
+
+.footer {
+  height: 10vh;
+  align-items: center;
+}
+
+.header {
+  max-height: 10vh;
+}
