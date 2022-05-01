@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/node": "^16.11.32",
     "@types/react-dom": "^18.0.3",
+    "antd": "^4.20.2",
     "include-media": "^1.4.10",
     "normalize-scss": "^7.0.1",
     "react": "^18.1.0",
