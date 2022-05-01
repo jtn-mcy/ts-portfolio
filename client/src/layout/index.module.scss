@@ -1,8 +1,18 @@
 @import "../styles/_global.scss";
 @import '../styles/_responsive.scss';
 
+.header {
+  display: flex;
+  flex-direction: row;
+  max-height: 10vh;
+
+  .logo {
+    padding-right: 15px;
+  }
+}
+
 .content {
-  min-height: 90vh;
+  min-height: 89vh;
   padding-left: 20px;
   padding-right: 20px;
   background-color: darkgrey;
@@ -11,8 +21,4 @@
 
 .footer {
   align-items: center;
-}
-
-.header {
-  max-height: 10vh;
 }
