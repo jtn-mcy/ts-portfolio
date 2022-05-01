@@ -1,13 +1,18 @@
 import React from 'react';
-import './styles/_global.scss'
-import { PageHeader } from 'antd'
+import './styles/_global.scss';
+import { PageHeader } from 'antd';
+import Layout from './layout';
+import Breadcrumbs from './components/Breadcrumbs';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <PageHeader title='PORTFOLIO'>
+    <Layout>
+      <Breadcrumbs params={[
+        //getParams here
+      ]} />
+      <PageHeader title='PORTFOLIO' >
       </PageHeader>
-    </div>
+    </Layout>
   );
 }
 
