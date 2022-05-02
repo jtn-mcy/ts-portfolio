@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Layout, Menu, Image } from 'antd'
+import { Layout, Menu, Image, Space } from 'antd'
 import eevee from '../assets/eeveeFavicon.png'
 const { Header, Content, Footer } = Layout;
 
@@ -24,10 +24,10 @@ const LayoutPage: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Layout className='layout'>
       <Header className={styles.header} >
-        <div className={styles.logo}>
+        <Space direction='horizontal' size='large' >
           <Image src={eevee} preview={false} />
-        </div>
-        <Menu theme='dark' mode='horizontal' items={items} />
+          <Menu theme='dark' mode='horizontal' items={items} />
+        </Space>
       </Header>
       <Content className={styles.content}>
         {children}
