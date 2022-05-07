@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './index.module.scss'
-import { Layout, Menu, Image, Space } from 'antd'
+import { Layout, Menu, Image, Space, MenuProps } from 'antd'
 import SiderProjects from '../components/SiderProjects'
 import eevee from '../assets/eeveeFavicon.png'
 
@@ -12,14 +13,23 @@ type LayoutProps = {
   children?: JSX.Element | JSX.Element[]
 }
 
-const items = [
+const items: MenuProps['items'] = [
   {
-    key: 'Home',
-    label: 'Home'
+    key: 'home',
+    label: (
+      <Link to='/' >
+        Home
+      </Link>
+    )
+
   },
   {
-    key: 'About',
-    label: 'About'
+    key: 'about',
+    label: (
+      <Link to='/about'>
+        About
+      </Link>
+    )
   }
 ]
 

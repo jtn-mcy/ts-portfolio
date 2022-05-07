@@ -1,8 +1,11 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom'
 import './styles/_global.scss';
 import { PageHeader } from 'antd';
 import Layout from './layout';
 import Breadcrumbs from './components/Breadcrumbs';
+import Home from './pages/Home';
+import About from './pages/About';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +15,11 @@ const App: React.FC = () => {
       ]} />
       <PageHeader title='PORTFOLIO' >
       </PageHeader>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+      </Routes>
     </Layout>
   );
 }
