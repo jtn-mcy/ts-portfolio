@@ -4,6 +4,7 @@ import './styles/_global.scss';
 import { PageHeader } from 'antd';
 import Layout from './layout';
 import Breadcrumbs from './components/Breadcrumbs';
+import Home from './pages/Home';
 
 const App: React.FC = () => {
   return (
@@ -15,8 +16,8 @@ const App: React.FC = () => {
       </PageHeader>
 
       <Routes>
-        {/* <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} /> */}
+        <Route path='/' element={<Home />} />
+        {/* <Route path='/about' element={<About />} /> */}
       </Routes>
     </Layout>
   );
