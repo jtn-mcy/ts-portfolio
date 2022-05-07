@@ -5,6 +5,7 @@ import { PageHeader } from 'antd';
 import Layout from './layout';
 import Breadcrumbs from './components/Breadcrumbs';
 import Home from './pages/Home';
+import About from './pages/About';
 
 const App: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const App: React.FC = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/about' element={<About />} /> */}
+        <Route path='/about' element={<About />} />
       </Routes>
     </Layout>
   );
