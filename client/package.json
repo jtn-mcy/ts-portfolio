@@ -6,10 +6,12 @@
     "@types/node": "^16.11.32",
     "@types/react-dom": "^18.0.3",
     "antd": "^4.20.2",
+    "dotenv": "^16.0.1",
     "include-media": "^1.4.10",
     "normalize-scss": "^7.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.51.0"
