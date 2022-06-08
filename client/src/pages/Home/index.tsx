@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetUnsplashImg } from '../../api'
-
+import placeholder from '../../assets/placeholderBG.png'
 
 
 const Home: React.FC = () => {
@@ -16,10 +16,10 @@ const Home: React.FC = () => {
   }, [images])
 
   const style = {
-    backgroundImage: `url(${background})`,
+    backgroundImage: `url(${background ? background : placeholder})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: "cover",
-    height: '100vh'
+    height: '100%'
   }
 
   return (

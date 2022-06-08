@@ -1,5 +1,6 @@
 import React from 'react'
 import { Breadcrumb } from 'antd'
+import styles from './index.module.scss'
 
 type BreadcrumbProps = {
   params: string[]
@@ -7,7 +8,7 @@ type BreadcrumbProps = {
 
 const Breadcrumbs: React.FC<BreadcrumbProps> = ({ params }) => {
   return (
-    <Breadcrumb style={{ margin: '16px 0' }}>
+    <Breadcrumb className={styles.breadcrumbs}>
       <Breadcrumb.Item>Home</Breadcrumb.Item>
       {params && params.map(path => <Breadcrumb.Item key={path}>{path}</Breadcrumb.Item>)}
     </Breadcrumb>
