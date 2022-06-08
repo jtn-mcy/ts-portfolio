@@ -24,6 +24,7 @@ type ImageUrls = string[]
 
 export const GetUnsplashImg: () => UseQueryResult<string[], Error> = () =>
   useQuery('get-unsplash-images', async () => {
+    if (process.env.NODE_ENV !== 'production') return
     const url = `https://api.unsplash.com/collections/i-X3O5Jac7E/photos?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`
     const imageUrls: ImageUrls = []
 

@@ -8,9 +8,11 @@
 }
 
 .content {
+  position: relative;
+    top: 0px;
   min-height: 89vh;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2px;
+    padding-right: 2px;
   background-color: darkgrey;
   color: black;
 }
