@@ -1,16 +1,14 @@
 import React from 'react'
 import { Card } from 'antd'
+import { Project } from '..'
+import { useNavigate } from 'react-router-dom'
 
-type Props = {
-  //Project: Project[]
-}
+const ProjectCards: React.FC<{ project: Project }> = ({ project }) => {
+  const navigate = useNavigate();
 
-const ProjectCards = (props: Props) => {
-  //TODO: map and return cards filled with projects
-  //TODO: Link them to the project page
   return (
-    <Card >
-      index
+    <Card hoverable={true} onClick={() => navigate(`project/${project.id}`)}>
+      <Card.Meta title={project.name} description={project.description} />
     </Card>
   )
 }
