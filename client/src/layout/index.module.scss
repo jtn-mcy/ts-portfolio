@@ -1,13 +1,13 @@
 @import "../styles/_global.scss";
 @import '../styles/_responsive.scss';
 
-.header {
+.Header {
   display: flex;
   flex-direction: row;
   max-height: 10vh;
 }
 
-.content {
+.Content {
   position: relative;
   top: 0px;
   min-height: 89vh;
@@ -17,6 +17,20 @@
   color: black;
 }
 
-.footer {
+.Footer {
   align-items: center;
+}
+.Logo {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin: 15px 15px 16px 0;
+}
+
+.Logo:hover {
+  cursor: pointer
+}
+
+.Menu {
+  width: 100%
 }
