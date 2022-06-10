@@ -1,7 +1,7 @@
-import express from 'express';
-import path from 'path'
-import sequelize from './config/index.js';
-import routes from './controllers/index.js'
+const express = require('express');
+const path = require('path');
+const sequelize = require('./config')
+const routes = require('./controllers')
 
 const app = express();
 const PORT = process.env.PORT || 3001;

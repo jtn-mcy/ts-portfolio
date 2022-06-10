@@ -1,8 +1,6 @@
-import express from 'express'
-import projectRoutes from './Project-routes.js'
-
-const router = express.Router();
+const router = require('express').Router();
+const projectRoutes = require('./Project-routes')
 
 router.use('/projects', projectRoutes);
 
-export default router
+module.exports = router
