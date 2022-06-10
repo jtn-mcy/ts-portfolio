@@ -21,14 +21,12 @@ Project.init(
     },
     gitHub: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     deploy: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     pictures: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING(272)),
     },
     date: {
       type: DataTypes.DATE
