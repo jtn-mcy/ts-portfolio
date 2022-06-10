@@ -3,12 +3,6 @@ import React from 'react'
 import ProjectCards from './ProjectCardsSider'
 import { GetUserProjects } from '../../api'
 
-export type Project = {
-  id: number
-  name: string
-  description: string
-}
-
 const SiderProjects: React.FC = () => {
   const { data: projects } = GetUserProjects();
 

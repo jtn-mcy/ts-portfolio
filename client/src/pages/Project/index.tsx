@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import { Project } from '../../components/SiderProjects';
+import { Project } from '../../api'
 import { Col, Row, Carousel, Descriptions, Badge } from 'antd';
 import styles from './index.module.scss'
 

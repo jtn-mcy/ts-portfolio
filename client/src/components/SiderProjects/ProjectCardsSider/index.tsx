@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'antd'
-import { Project } from '..'
+import { Project } from '../../../api'
 import { useNavigate } from 'react-router-dom'
 
 const maxDescriptionLength = 60
