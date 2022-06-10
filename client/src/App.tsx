@@ -5,7 +5,7 @@ import Layout from './layout';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import Home from './pages/Home';
 import About from './pages/About';
-import ProjectPage from './pages/Projects';
+import ProjectPage from './pages/Project';
 import { queryClient } from './api';
 import { QueryClientProvider } from 'react-query';
 
