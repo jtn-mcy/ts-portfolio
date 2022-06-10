@@ -8,7 +8,7 @@ export type Project = {
   description: string
 }
 
-const testProjects: Project[] = [
+export const testProjects: Project[] = [
   {
     id: 1,
     name: 'project 1',

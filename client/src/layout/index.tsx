@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
-import { Layout, Menu, Image, Space, MenuProps } from 'antd'
+import { Layout, Menu, Image, MenuProps } from 'antd'
 import SiderProjects from '../components/SiderProjects'
 import eevee from '../assets/eeveeFavicon.png'
 
@@ -15,13 +15,12 @@ type LayoutProps = {
 
 const items: MenuProps['items'] = [
   {
-    key: 'home',
+    key: '',
     label: (
       <Link to='/' >
         Home
       </Link>
     )
-
   },
   {
     key: 'about',
@@ -30,17 +29,26 @@ const items: MenuProps['items'] = [
         About
       </Link>
     )
+  },
+  {
+    key: 'projects',
+    label: (
+      <Link to='/projects'>
+        Projects
+      </Link>
+    )
   }
 ]
 
 const LayoutPage: React.FC<LayoutProps> = ({ children }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <Layout className='layout'>
-      <Header className={styles.header} >
-        <Space direction='horizontal' size='large' >
-          <Image src={eevee} preview={false} />
-          <Menu theme='dark' mode='horizontal' items={items} />
-        </Space>
+      <Header className={styles.Header} >
+        <Image className={styles.Logo} src={eevee} preview={false} onClick={() => navigate('/')} />
+        <Menu className={styles.Menu} theme='dark' mode='horizontal' selectedKeys={[location.pathname.split('/')[1]]} items={items} />
       </Header>
       <Layout>
         <Sider>
@@ -49,11 +57,11 @@ const LayoutPage: React.FC<LayoutProps> = ({ children }) => {
             <SiderProjects />
           </Suspense>
         </Sider>
-        <Content className={styles.content}>
+        <Content className={styles.Content}>
           {children}
         </Content>
       </Layout>
-      <Footer className={styles.footer}> Johnny Portfolio ©2022 - Styled by Ant Design </Footer>
+      <Footer className={styles.Footer}> Johnny Portfolio ©2022 - Styled by Ant Design </Footer>
     </Layout>
   )
 }

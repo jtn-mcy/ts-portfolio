@@ -7,7 +7,7 @@ const ProjectCards: React.FC<{ project: Project }> = ({ project }) => {
   const navigate = useNavigate();
 
   return (
-    <Card hoverable={true} onClick={() => navigate(`project/${project.id}`)}>
+    <Card hoverable={true} onClick={() => navigate(`projects/${project.id}`)}>
       <Card.Meta title={project.name} description={project.description} />
     </Card>
   )
