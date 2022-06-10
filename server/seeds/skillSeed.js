@@ -1,4 +1,4 @@
-import { Skill } from '../models/index.js'
+const { Skill } = require('../models')
 
 const skillData = [
   //|1
@@ -127,4 +127,4 @@ const skillData = [
 
 const seedSkill = () => Skill.bulkCreate(skillData);
 
-export default seedSkill
+module.exports = seedSkill

@@ -1,5 +1,5 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/index.js';
+const { Model, DataTypes } = require('sequelize')
+const sequelize = require('../config')
 
 class Skill extends Model { };
 
@@ -28,4 +28,4 @@ Skill.init(
   }
 );
 
-export default Skill
+module.exports = Skill

@@ -1,4 +1,4 @@
-import { ProjectSkill } from '../models/index.js'
+const { ProjectSkill } = require('../models')
 
 const projectSkillData = [
   //!TAMAGACHA
@@ -379,4 +379,4 @@ const projectSkillData = [
 
 const seedProjectSkill = () => ProjectSkill.bulkCreate(projectSkillData);
 
-export default seedProjectSkill
+module.exports = seedProjectSkill;

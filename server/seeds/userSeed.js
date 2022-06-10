@@ -1,5 +1,5 @@
-import 'dotenv/config'
-import { User } from '../models/index.js'
+require('dotenv').config();
+const { User } = require('../models')
 
 const userData = [
   {
@@ -18,4 +18,4 @@ const userData = [
 
 const seedUser = () => User.bulkCreate(userData);
 
-export default seedUser;
+module.exports = seedUser
