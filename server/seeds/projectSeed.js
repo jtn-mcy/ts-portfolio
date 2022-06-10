@@ -1,4 +1,4 @@
-import { Project } from '../models/index.js'
+const { Project } = require('../models')
 
 const projectData = [
   {
@@ -52,5 +52,4 @@ const projectData = [
 
 const seedProject = () => Project.bulkCreate(projectData);
 
-export default seedProject
-
+module.exports = seedProject

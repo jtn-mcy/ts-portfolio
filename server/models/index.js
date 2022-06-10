@@ -1,7 +1,7 @@
-import User from './User.js'
-import Project from './Project.js'
-import Skill from './Skill.js';
-import ProjectSkill from './ProjectSkill.js';
+const User = require('./User');
+const Project = require('./Project');
+const Skill = require('./Skill');
+const ProjectSkill = require('./ProjectSkill');
 
 User.hasMany(Project, {
   foreignKey: "user_id"
@@ -26,4 +26,4 @@ Skill.belongsToMany(Project, {
   foreignKey: "skill_id"
 })
 
-export { User, Project, Skill, ProjectSkill };
+module.exports = { User, Project, Skill, ProjectSkill }

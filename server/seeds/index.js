@@ -1,8 +1,14 @@
-import sequelize from '../config/index.js';
-import seedUser from './userSeed.js'
-import seedProject from './projectSeed.js'
-import seedSkill from './skillSeed.js'
-import seedProjectSkill from './projectSkillSeed.js'
+// import sequelize from '../config/index.js';
+// import seedUser from './userSeed.js'
+// import seedProject from './projectSeed.js'
+// import seedSkill from './skillSeed.js'
+// import seedProjectSkill from './projectSkillSeed.js'
+
+const sequelize = require('../config');
+const seedUser = require('./userSeed');
+const seedProject = require('./projectSeed');
+const seedSkill = require('./skillSeed');
+const seedProjectSkill = require('./projectSkillSeed');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
