@@ -28,7 +28,7 @@ Project.init(
       allowNull: false
     },
     pictures: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
     },
     date: {
       type: DataTypes.DATE

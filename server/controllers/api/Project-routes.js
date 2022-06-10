@@ -1,6 +1,5 @@
-import express from 'express'
-import { Project } from '../../models/index.js'
-const router = express.Router();
+const router = require('express').Router();
+const { Project } = require('../../models/');
 
 router.get('/', async (req, res) => {
   try {
@@ -12,4 +11,4 @@ router.get('/', async (req, res) => {
   }
 })
 
-export default router
+module.exports = router
