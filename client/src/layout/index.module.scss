@@ -20,6 +20,7 @@
 .Footer {
   align-items: center;
 }
+
 .Logo {
   float: left;
   width: 30px;
@@ -32,5 +33,11 @@
 }
 
 .Menu {
-  width: 100%
+  width: 100%;
+}
+
+.Sider {
+  overflow: auto;
+  height: 91vh;
+  scrollbar-color: red;
 }

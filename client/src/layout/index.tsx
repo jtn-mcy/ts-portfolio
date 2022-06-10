@@ -51,7 +51,7 @@ const LayoutPage: React.FC<LayoutProps> = ({ children }) => {
         <Menu className={styles.Menu} theme='dark' mode='horizontal' selectedKeys={[location.pathname.split('/')[1]]} items={items} />
       </Header>
       <Layout>
-        <Sider>
+        <Sider className={styles.Sider}>
           <Suspense >
             {/* TODO: add a loader for suspense */}
             <SiderProjects />

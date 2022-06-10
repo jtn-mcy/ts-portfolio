@@ -6,9 +6,31 @@ import {
 
 export const queryClient = new QueryClient();
 
+//** Projects */
+export type Project = {
+  id: number
+  name: string
+  description: string
+  gitHub?: string
+  deploy?: string
+  pictures?: string[]
+  date?: string
+}
+
+export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
+  useQuery('projects', async () => {
+    console.log('Getting projects...')
+    const url = `/api/projects`
+
+    const res = await fetch(url);
+    const data = await res.json();
+    return data as Project[]
+  }, {
+    retry: false
+  })
 
 //** Unsplash API */
-type Photo = {
+export type Photo = {
   id: number;
   width: number;
   height: number;
@@ -25,6 +47,7 @@ type ImageUrls = string[]
 export const GetUnsplashImg: () => UseQueryResult<string[], Error> = () =>
   useQuery('get-unsplash-images', async () => {
     if (process.env.NODE_ENV !== 'production') return
+    console.log('Getting unsplash images...')
     const url = `https://api.unsplash.com/collections/i-X3O5Jac7E/photos?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`
     const imageUrls: ImageUrls = []
 
