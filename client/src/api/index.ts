@@ -7,15 +7,24 @@ import {
 export const queryClient = new QueryClient();
 
 //** Projects */
+export type Skill = {
+  id: number
+  name: string
+  picture: string
+}
+
 export type Project = {
   id: number
   name: string
   description: string
   gitHub?: string
   deploy?: string
-  pictures?: string[]
+  pictures: string[]
   date?: string
+  assigned_skills?: Skill[]
 }
+
+
 
 export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
   useQuery('projects', async () => {
@@ -25,6 +34,19 @@ export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
     const res = await fetch(url);
     const data = await res.json();
     return data as Project[]
+  }, {
+    retry: false
+  })
+
+export const GetUserProject: (id: string) => UseQueryResult<Project, Error> = (id) =>
+  useQuery('project', async () => {
+    console.log(`Getting project with id ${id}`)
+    const url = `/api/projects/${id}`
+
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+    return data
   }, {
     retry: false
   })
