@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import { Project } from '../../api'
-import { Col, Row, Carousel, Descriptions, Badge } from 'antd';
+import { Project, GetUserProject } from '../../api'
+import { Col, Row, Carousel, Descriptions, Badge, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
 
 const ProjectDescriptions: React.FC = () => {
@@ -17,48 +17,50 @@ const ProjectDescriptions: React.FC = () => {
   )
 }
 
-const ProjectCarousel: React.FC = () => {
+const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
   return (
     <Carousel autoplay>
-      <div>
-        <h3 className={styles.Carousel}>1</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>2</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>3</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>4</h3>
-      </div>
+      {pictures.length ? pictures.map((picture) => (
+        <div key={picture}>
+          <Image className={styles.Carousel} src={picture} />
+        </div>
+      )) : (
+        <Empty />
+      )}
     </Carousel>
   )
 }
 
-const ProjectGrid: React.FC = () => {
+const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
+  const { data: project, isLoading } = GetUserProject(id);
+
   return (
-    <div style={{ overflow: 'hidden' }}>
-      <Row className={styles.Row} gutter={32} >
-      <Col className={styles.ColumnPadding} span={3} />
-      <Col span={18} >
-        <ProjectCarousel />
-          <div>
-            <ProjectDescriptions />
-          </div>
-      </Col>
-      <Col className={styles.ColumnPadding} span={3} />
-    </Row>
-    </div>
+    isLoading ? <Spin /> :
+      project ? (
+        <div style={{ overflowX: 'hidden', overflowY: 'auto' }}>
+          <Row className={styles.Row} gutter={32} >
+            <Col className={styles.ColumnPadding} span={3} />
+            <Col span={18} >
+              <Row justify='center'>
+                <ProjectCarousel pictures={project.pictures ?? []} />
+              </Row>
+              <div>
+                <ProjectDescriptions />
+              </div>
+            </Col>
+            <Col className={styles.ColumnPadding} span={3} />
+          </Row>
+        </div>
+      ) : <Empty />
   )
 }
 
-const ProjectPage: React.FC<{ project?: Project }> = ({ project }) => {
-  const { projectId } = useParams();
+const ProjectPage: React.FC = () => {
+  const { projectId } = useParams<{ projectId: string }>();
 
   return (
     projectId ? (
-      <ProjectGrid />
+      <ProjectGrid id={projectId} />
     ) : (
       <div>Projects cards here</div>
     ) 

@@ -4,14 +4,16 @@
 }
 
 .ColumnPadding {
-  border: red solid 1px;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .Carousel {
   // max-height: 500px;
   height: 100%;
   color: #fff;
   line-height: 500px;
-  text-align: center;
   background: #364d79
+}
+.Center {
+  display: flex;
+  justify-content: center;
 }
