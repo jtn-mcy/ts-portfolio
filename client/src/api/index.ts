@@ -26,7 +26,7 @@ export type Project = {
 
 
 
-export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
+export const useGetUserProjects: () => UseQueryResult<Project[], Error> = () =>
   useQuery('projects', async () => {
     console.log('Getting projects...')
     const url = `/api/projects`
@@ -35,17 +35,17 @@ export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
     const data = await res.json();
     return data as Project[]
   }, {
-    retry: false
+    retry: false,
   })
 
-export const GetUserProject: (id: string) => UseQueryResult<Project, Error> = (id) =>
+export const useGetUserProject: (id: string) => UseQueryResult<Project, Error> = (id) =>
   useQuery('project', async () => {
     console.log(`Getting project with id ${id}`)
     const url = `/api/projects/${id}`
 
     const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
+    const data = await res.json() as Project;
+
     return data
   }, {
     retry: false
