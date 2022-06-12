@@ -1,21 +1,22 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Row, Col, Image } from 'antd'
+import { Row, Col, Card } from 'antd'
+
+const { Grid } = Card
+
+const gridStyle = { width: '10%', alignItems: "center", border: 'none' }
+const arr = [1, 2, 3, 4, 1, 2, 2, 1, 23, 123, 132, 132, 21, 2, 2, 2]
 
 const About: React.FC = () => {
   return (
     <div className={styles.CenterCard}>
-      <Row gutter={32} style={{ height: '100%', margin: 0 }}>
+      <Row gutter={32} style={{ height: '100%', margin: 0, overflowY: "auto" }}>
         <Col span={8} style={{ backgroundColor: 'red', padding: '8px' }}>
-          <Row style={{ height: '40%', backgroundColor: 'rgba(0, 100 , 0 , 0.8)', padding: '16px' }}>
-            <Col span={24} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Image src='https://via.placeholder.com/400x400' height={200} width={200} />
-            </Col>
-          </Row>
-          <Row style={{ height: '60%', backgroundColor: 'rgba(100, 0 , 0 , 0.8)', padding: '16px' }}>
-            World
-
-          </Row>
+          <Card cover={<img alt='pfp' src='https://imgur.com/53CzRbW.jpg' />}>
+            <Card bordered={false}>
+              {arr && arr.map((_, index) => <Grid style={gridStyle}>Icon {index}</Grid>)}
+            </Card>
+          </Card>
         </Col>
         <Col span={16} style={{ backgroundColor: 'green', padding: '16px' }}>
           <h1> Johnny Nguyen</h1>
