@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
-import { Project, GetUserProject } from '../../api'
+import { useGetUserProject } from '../../api'
 import { Col, Row, Carousel, Descriptions, Badge, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
+import { ProjectContext } from '../../context/selectedProject';
 
 const ProjectDescriptions: React.FC = () => {
   return (
@@ -32,7 +33,13 @@ const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
 }
 
 const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
-  const { data: project, isLoading } = GetUserProject(id);
+  const [projectId] = useContext(ProjectContext)
+  const { data: project, isLoading, refetch } = useGetUserProject(projectId);
+
+  useEffect(() => {
+    const getproject = async () => await refetch();
+    getproject()
+  }, [projectId, refetch])
 
   return (
     isLoading ? <Spin /> :
@@ -57,10 +64,15 @@ const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
 
 const ProjectPage: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
-
+  const [id, setId] = useState<string>()
+  useEffect(() => {
+    if (projectId) {
+      setId(projectId)
+    }
+  }, [projectId])
   return (
-    projectId ? (
-      <ProjectGrid id={projectId} />
+    id ? (
+      <ProjectGrid id={id} />
     ) : (
       <div>Projects cards here</div>
     ) 

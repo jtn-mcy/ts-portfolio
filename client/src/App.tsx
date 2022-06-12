@@ -8,10 +8,12 @@ import About from './pages/About';
 import ProjectPage from './pages/Project';
 import { queryClient } from './api';
 import { QueryClientProvider } from 'react-query';
+import ProjectedContext from './context/selectedProject';
 
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
+      <ProjectedContext>
       <Layout>
         <Breadcrumbs params={[
           //getParams here
@@ -24,6 +26,7 @@ const App: React.FC = () => {
           </Route>
         </Routes>
       </Layout>
+      </ProjectedContext>
     </QueryClientProvider>
   );
 }
