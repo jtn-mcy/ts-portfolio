@@ -6,14 +6,13 @@
 .ColumnPadding {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.Carousel {
-  // max-height: 500px;
-  height: 100%;
-  color: #fff;
-  line-height: 500px;
-  background: #364d79
-}
-.Center {
-  display: flex;
-  justify-content: center;
+.CarouselWrapper {
+  max-height: 800px;
+  width: 800px;
+  text-align: center;
+
+  img {
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 }

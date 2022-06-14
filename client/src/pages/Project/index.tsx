@@ -4,7 +4,7 @@ import { useGetUserProject } from '../../api'
 import { Col, Row, Carousel, Descriptions, Badge, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
-
+import placeholderCat from '../../assets/projectPlaceholder350x350.png'
 const ProjectDescriptions: React.FC = () => {
   return (
     <Descriptions title="Project 1" bordered column={1}>
@@ -20,15 +20,15 @@ const ProjectDescriptions: React.FC = () => {
 
 const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
   return (
-    <Carousel autoplay>
+    <div className={styles.CarouselWrapper}>
+      <Carousel >
       {pictures.length ? pictures.map((picture) => (
-        <div key={picture}>
-          <Image className={styles.Carousel} src={picture} />
-        </div>
+        <Image style={{ width: '100%' }} alt='project' src={picture} preview={false} />
       )) : (
-        <Empty />
+            <Image alt='placeholder' src={placeholderCat} preview={false} />
       )}
-    </Carousel>
+      </Carousel>
+    </div>
   )
 }
 
