@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import { Layout, Menu, Image, MenuProps } from 'antd'
 import SiderProjects from '../components/SiderProjects'
-import eevee from '../assets/eeveeFavicon.png'
+import { eeveeFavicon as eevee } from '../assets/images'
 
 
 const { Header, Content, Footer, Sider } = Layout;
