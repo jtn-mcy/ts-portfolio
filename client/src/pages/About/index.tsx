@@ -18,10 +18,35 @@ const About: React.FC = () => {
             </Card>
           </Card>
         </Col>
-        <Col span={16} style={{ backgroundColor: 'green', padding: '16px' }}>
-          <h1> Johnny Nguyen</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris ultrices eros in cursus turpis massa. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. A condimentum vitae sapien pellentesque habitant morbi tristique. Ut pharetra sit amet aliquam id. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Ut porttitor leo a diam. Vitae aliquet nec ullamcorper sit amet. Sed enim ut sem viverra aliquet eget sit amet tellus. Pharetra sit amet aliquam id diam maecenas. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Dolor magna eget est lorem ipsum dolor. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Nisi vitae suscipit tellus mauris a. Hac habitasse platea dictumst quisque sagittis purus. Vulputate odio ut enim blandit volutpat maecenas volutpat. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. Ut tristique et egestas quis ipsum suspendisse. Nulla porttitor massa id neque aliquam. Gravida arcu ac tortor dignissim convallis aenean et tortor at.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris ultrices eros in cursus turpis massa. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. A condimentum vitae sapien pellentesque habitant morbi tristique. Ut pharetra sit amet aliquam id. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Ut porttitor leo a diam. Vitae aliquet nec ullamcorper sit amet. Sed enim ut sem viverra aliquet eget sit amet tellus. Pharetra sit amet aliquam id diam maecenas. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Dolor magna eget est lorem ipsum dolor. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Nisi vitae suscipit tellus mauris a. Hac habitasse platea dictumst quisque sagittis purus. Vulputate odio ut enim blandit volutpat maecenas volutpat. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. Ut tristique et egestas quis ipsum suspendisse. Nulla porttitor massa id neque aliquam. Gravida arcu ac tortor dignissim convallis aenean et tortor at.</p>
+        <Col span={16} style={{ padding: '16px' }}>
+          <Title> Johnny Nguyen</Title>
+          <Title level={3}> Current position </Title>
+          <Paragraph>
+            I am formerly a front-end engineer for <Link className={styles.Link} target="_blank" href='http://www.kernel.com'>Kernel</Link> and currently a part time teaching assistant for <Link className={styles.Link} target="_blank" href='https://bootcamp.berkeley.edu/coding/'>UC Berkeley Extension Coding Boot Camp</Link>. Open for new opportunities as a front-end/UI/UX developer!
+          </Paragraph>
+          <Divider />
+          <Title level={3}>My Story</Title>
+          <Paragraph>
+            I was born in the Bay Area where my journey took me through several career prospects--I graduated at San Jose State University with a chemistry degree before moving on to pharmacy school in Albany, NY. I graduated and became a licensed pharmacist in Nevada and Oregon. While I enjoyed interacting and helping patients through my internships, I felt a strong passion to build something in tech. Perhaps it was my roots in Silicon Valley calling me? In 2021, I dabbled in coding and eventually entered a program at UC Berkeley Extension Boot Camp for Web Development. I graduated and worked as a teaching assistant to help others learn programming.
+          </Paragraph>
+          <Paragraph>
+            Over the next three months in the winter of 2021/22, I would eventually find myself as a UI/UX Engineer at Kernel where I hit the ground running learning git processes, refining my React skills, writing TypeScript, making meaningful changes to both Kernel's in-house portal application used by researchers and study administrators, and modifying the marketing website to interface with AWS so participants could easily sign up for studies. I worked at Kernel for a quarter of the year until I was eventually let go as the company downsized. Startup life! The search for another great opportunity continues...
+          </Paragraph>
+          <Paragraph>
+            My current hobbies include rock climbing, working out, playing piano, watching Twitch streams (mostly Dota2 and Starcraft), and leaving Hololive in the background while I work. I love listening to music and love new suggestions!
+          </Paragraph>
+          <Divider />
+          <Title level={3}>Contact me:</Title>
+          <Paragraph>
+            I am available for conversation through <Link>
+              LinkedIn
+            </Link>
+            , my email <Text type='success'>johnnytrucnguyen@gmail.com </Text>
+            and by phone <Text type='success'>
+              408-641-5559
+            </Text>
+            . This portfolio repo is hosted at <Link target='_blank' className={styles.Link} href="https://github.com/NguyenJohnnyT/ts-portfolio">GitHub</Link>.
+          </Paragraph>
         </Col>
       </Row>
     </div>
