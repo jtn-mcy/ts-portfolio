@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useContext, useMemo } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
-import { useGetUserProject, useGetDeployStatus, Project } from '../../api'
-import { Col, Row, Carousel, Descriptions, Badge, Spin, Empty, Image } from 'antd';
+import { useGetUserProject, Project } from '../../api'
+import { Col, Row, Carousel, Descriptions, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
 import placeholderCat from '../../assets/projectPlaceholder350x350.png'
 import moment from 'moment'
 
 const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
-  const { data: isDeployed } = useGetDeployStatus(project.deploy)
+
   return (
     <Descriptions title={project.name} bordered column={1}>
       <Descriptions.Item label="Project Description">{project.description}</Descriptions.Item>
@@ -18,9 +18,9 @@ const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
         })}
       </Descriptions.Item>
       {project.date && <Descriptions.Item label="Date released">{`${moment(project.date).format('MMMM YYYY')}`}</Descriptions.Item>}
-      <Descriptions.Item label="Status">
-        {isDeployed ? <Badge status='success' text='Running' /> : <Badge status='error' text='Not deployed or down' />}
-      </Descriptions.Item>
+      {project.gitHub && <Descriptions.Item label="Github"><a href={project.gitHub}>Github</a></Descriptions.Item>}
+      {project.deploy && <Descriptions.Item label="Deployment"><a href={project.deploy}>Deployment</a></Descriptions.Item>}
+
     </Descriptions>
   )
 }
@@ -29,8 +29,8 @@ const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
   return (
     <div className={styles.CarouselWrapper}>
       <Carousel >
-      {pictures.length ? pictures.map((picture) => (
-        <Image style={{ width: '100%' }} alt='project' src={picture} preview={false} />
+        {pictures.length ? pictures.map((picture, index) => (
+          <Image key={index} style={{ width: '100%' }} alt='project' src={picture} preview={false} />
       )) : (
             <Image alt='placeholder' src={placeholderCat} preview={false} />
       )}

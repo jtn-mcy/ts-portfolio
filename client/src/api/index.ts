@@ -51,18 +51,26 @@ export const useGetUserProject: (id: string) => UseQueryResult<Project, Error> =
     retry: false
   })
 
-export const useGetDeployStatus: (url?: string) => UseQueryResult<{ success: boolean }, Error> = (url) =>
+/* Future work
+export const useGetDeployStatus: (url?: string) => UseQueryResult<'success' | 'error', Error> = (url) =>
   useQuery('deployment status', async () => {
-    if (!url) return { success: false }
-    console.log(`Checking if ${url} is deloyed...`)
+    if (!url) return 'error'
+    const [, , , username, application] = url.split('/')
+    console.log(`Checking if ${username}/${application} is deloyed...`)
 
-    const res = await fetch(url);
+    const deployRes = await fetch(`https://api.github.com/repos/${username}/${application}/deployments`);
+    const deployData = await deployRes.json()
+    if (!deployData.length) return 'error'
+    const statusResponse = await fetch(deployData[0].statuses_url);
+    const statusData = await statusResponse.json();
 
-    if (res.status === 200) return { success: true }
-    else return { success: false }
+    if (statusData[0].state === 'success') return 'success'
+    return 'error'
   }, {
-    retry: false
+    retry: false,
+    refetchInterval: 5000
   })
+*/
 
 //** Unsplash API */
 export type Photo = {
