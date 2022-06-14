@@ -1,18 +1,40 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Row, Col, Card } from 'antd'
+import { Row, Col, Card, Typography, Divider, Carousel } from 'antd'
+import { me1, me2, me3, me4 } from '../../assets/images'
 
+const { Title, Paragraph, Link, Text } = Typography
 const { Grid } = Card
 
 const gridStyle = { width: '10%', alignItems: "center", border: 'none' }
 const arr = [1, 2, 3, 4, 1, 2, 2, 1, 23, 123, 132, 132, 21, 2, 2, 2]
 
+const PfpCarousel: React.FC = () => {
+  const ContentStyle = { width: '100%', height: '100%' }
+  return (
+    <Carousel autoplay>
+      <div>
+        <img style={ContentStyle} alt='pfp' src={me1} />
+      </div>
+      <div>
+        <img style={ContentStyle} alt='pfp' src={me2} />
+      </div>
+      <div>
+        <img style={ContentStyle} alt='pfp' src={me3} />
+      </div>
+      <div>
+        <img style={ContentStyle} alt='pfp' src={me4} />
+      </div>
+    </Carousel>
+  )
+}
+
 const About: React.FC = () => {
   return (
     <div className={styles.CenterCard}>
       <Row gutter={32} style={{ height: '100%', margin: 0, overflowY: "auto" }}>
-        <Col span={8} style={{ backgroundColor: 'red', padding: '8px' }}>
-          <Card cover={<img alt='pfp' src='https://imgur.com/53CzRbW.jpg' />}>
+        <Col span={8} style={{ padding: '8px' }}>
+          <Card cover={<PfpCarousel />}>
             <Card bordered={false}>
               {arr && arr.map((_, index) => <Grid style={gridStyle}>Icon {index}</Grid>)}
             </Card>
