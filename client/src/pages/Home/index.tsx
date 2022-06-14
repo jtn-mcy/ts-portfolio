@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetUnsplashImg } from '../../api'
-import placeholder from '../../assets/placeholderBG.png'
+import { placeholderBG as placeholder } from '../../assets/images'
 import HomeTitle from '../../components/HomeTitle'
 import styles from './index.module.scss'
 
