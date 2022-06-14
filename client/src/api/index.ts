@@ -7,17 +7,26 @@ import {
 export const queryClient = new QueryClient();
 
 //** Projects */
+export type Skill = {
+  id: number
+  name: string
+  picture: string
+}
+
 export type Project = {
   id: number
   name: string
   description: string
   gitHub?: string
   deploy?: string
-  pictures?: string[]
+  pictures: string[]
   date?: string
+  assigned_skills?: Skill[]
 }
 
-export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
+
+
+export const useGetUserProjects: () => UseQueryResult<Project[], Error> = () =>
   useQuery('projects', async () => {
     console.log('Getting projects...')
     const url = `/api/projects`
@@ -26,8 +35,42 @@ export const GetUserProjects: () => UseQueryResult<Project[], Error> = () =>
     const data = await res.json();
     return data as Project[]
   }, {
+    retry: false,
+  })
+
+export const useGetUserProject: (id: string) => UseQueryResult<Project, Error> = (id) =>
+  useQuery('project', async () => {
+    console.log(`Getting project with id ${id}`)
+    const url = `/api/projects/${id}`
+
+    const res = await fetch(url);
+    const data = await res.json() as Project;
+
+    return data
+  }, {
     retry: false
   })
+
+/* Future work
+export const useGetDeployStatus: (url?: string) => UseQueryResult<'success' | 'error', Error> = (url) =>
+  useQuery('deployment status', async () => {
+    if (!url) return 'error'
+    const [, , , username, application] = url.split('/')
+    console.log(`Checking if ${username}/${application} is deloyed...`)
+
+    const deployRes = await fetch(`https://api.github.com/repos/${username}/${application}/deployments`);
+    const deployData = await deployRes.json()
+    if (!deployData.length) return 'error'
+    const statusResponse = await fetch(deployData[0].statuses_url);
+    const statusData = await statusResponse.json();
+
+    if (statusData[0].state === 'success') return 'success'
+    return 'error'
+  }, {
+    retry: false,
+    refetchInterval: 5000
+  })
+*/
 
 //** Unsplash API */
 export type Photo = {

@@ -1,64 +1,85 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
-import { Project } from '../../api'
-import { Col, Row, Carousel, Descriptions, Badge } from 'antd';
+import { useGetUserProject, Project } from '../../api'
+import { Col, Row, Carousel, Descriptions, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
+import { ProjectContext } from '../../context/selectedProject';
+import placeholderCat from '../../assets/projectPlaceholder350x350.png'
+import moment from 'moment'
 
-const ProjectDescriptions: React.FC = () => {
+const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
+
   return (
-    <Descriptions title="Project 1" bordered column={1}>
-      <Descriptions.Item label="Project Description">Current project. Collect all five Tamas -- they each have different stories! Feed, play, and take them out. See what they're saying when they're hungry, sad, or happy. Make sure to keep up and check on them to see their happiness level or else they will die.</Descriptions.Item>
-      <Descriptions.Item label="Tech used"> JavaScript | HTML5 | CSS | Server Side API | Fetch | JSON | Node.js | Express.js | Heroku | JSON Web Tokens | MySQL | Sequelize ORM | React | React Hooks | JSX | bcrypt | dotenv | node-cron | node-fetch | sweetalert2 | howler |</Descriptions.Item>
-      <Descriptions.Item label="Date released">Sept 2021</Descriptions.Item>
-      <Descriptions.Item label="Status">
-        <Badge status='success' text='Running' />
+    <Descriptions title={project.name} bordered column={1}>
+      <Descriptions.Item label="Project Description">{project.description}</Descriptions.Item>
+      <Descriptions.Item label="Tech used">
+        {project.assigned_skills?.length && project.assigned_skills.map((skill, i) => {
+          return (i + 1) === (project.assigned_skills?.length) ? skill.name : skill.name + ', '
+        })}
       </Descriptions.Item>
+      {project.date && <Descriptions.Item label="Date released">{`${moment(project.date).format('MMMM YYYY')}`}</Descriptions.Item>}
+      {project.gitHub && <Descriptions.Item label="Github"><a href={project.gitHub}>Github</a></Descriptions.Item>}
+      {project.deploy && <Descriptions.Item label="Deployment"><a href={project.deploy}>Deployment</a></Descriptions.Item>}
+
     </Descriptions>
   )
 }
 
-const ProjectCarousel: React.FC = () => {
+const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
   return (
-    <Carousel autoplay>
-      <div>
-        <h3 className={styles.Carousel}>1</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>2</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>3</h3>
-      </div>
-      <div>
-        <h3 className={styles.Carousel}>4</h3>
-      </div>
-    </Carousel>
-  )
-}
-
-const ProjectGrid: React.FC = () => {
-  return (
-    <div style={{ overflow: 'hidden' }}>
-      <Row className={styles.Row} gutter={32} >
-      <Col className={styles.ColumnPadding} span={3} />
-      <Col span={18} >
-        <ProjectCarousel />
-          <div>
-            <ProjectDescriptions />
-          </div>
-      </Col>
-      <Col className={styles.ColumnPadding} span={3} />
-    </Row>
+    <div className={styles.CarouselWrapper}>
+      <Carousel >
+        {pictures.length ? pictures.map((picture, index) => (
+          <Image key={index} style={{ width: '100%' }} alt='project' src={picture} preview={false} />
+      )) : (
+            <Image alt='placeholder' src={placeholderCat} preview={false} />
+      )}
+      </Carousel>
     </div>
   )
 }
 
-const ProjectPage: React.FC<{ project?: Project }> = ({ project }) => {
-  const { projectId } = useParams();
+const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
+  const [projectId] = useContext(ProjectContext)
+  const { data: project, isLoading, refetch } = useGetUserProject(projectId);
+
+  useEffect(() => {
+    const getproject = async () => await refetch();
+    getproject()
+  }, [projectId, refetch])
 
   return (
-    projectId ? (
-      <ProjectGrid />
+    isLoading ? <Spin /> :
+      project ? (
+        <div style={{ overflowX: 'hidden', overflowY: 'auto' }}>
+          <Row className={styles.Row} gutter={32} >
+            <Col className={styles.ColumnPadding} span={3} />
+            <Col span={18} >
+              <Row justify='center'>
+                <ProjectCarousel pictures={project.pictures ?? []} />
+              </Row>
+              <div>
+                <ProjectDescriptions project={project} />
+              </div>
+            </Col>
+            <Col className={styles.ColumnPadding} span={3} />
+          </Row>
+        </div>
+      ) : <Empty />
+  )
+}
+
+const ProjectPage: React.FC = () => {
+  const { projectId } = useParams<{ projectId: string }>();
+  const [id, setId] = useState<string>()
+  useEffect(() => {
+    if (projectId) {
+      setId(projectId)
+    }
+  }, [projectId])
+  return (
+    id ? (
+      <ProjectGrid id={id} />
     ) : (
       <div>Projects cards here</div>
     ) 

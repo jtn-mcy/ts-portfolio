@@ -1,10 +1,10 @@
 import { Card } from 'antd'
 import React from 'react'
 import ProjectCards from './ProjectCardsSider'
-import { GetUserProjects } from '../../api'
+import { useGetUserProjects } from '../../api'
 
 const SiderProjects: React.FC = () => {
-  const { data: projects } = GetUserProjects();
+  const { data: projects } = useGetUserProjects();
 
   return (
     <>
