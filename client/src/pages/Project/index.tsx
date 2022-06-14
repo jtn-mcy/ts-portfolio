@@ -1,18 +1,25 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, useMemo } from 'react'
 import { useParams } from 'react-router-dom';
-import { useGetUserProject } from '../../api'
+import { useGetUserProject, useGetDeployStatus, Project } from '../../api'
 import { Col, Row, Carousel, Descriptions, Badge, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
 import placeholderCat from '../../assets/projectPlaceholder350x350.png'
-const ProjectDescriptions: React.FC = () => {
+import moment from 'moment'
+
+const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
+  const { data: isDeployed } = useGetDeployStatus(project.deploy)
   return (
-    <Descriptions title="Project 1" bordered column={1}>
-      <Descriptions.Item label="Project Description">Current project. Collect all five Tamas -- they each have different stories! Feed, play, and take them out. See what they're saying when they're hungry, sad, or happy. Make sure to keep up and check on them to see their happiness level or else they will die.</Descriptions.Item>
-      <Descriptions.Item label="Tech used"> JavaScript | HTML5 | CSS | Server Side API | Fetch | JSON | Node.js | Express.js | Heroku | JSON Web Tokens | MySQL | Sequelize ORM | React | React Hooks | JSX | bcrypt | dotenv | node-cron | node-fetch | sweetalert2 | howler |</Descriptions.Item>
-      <Descriptions.Item label="Date released">Sept 2021</Descriptions.Item>
+    <Descriptions title={project.name} bordered column={1}>
+      <Descriptions.Item label="Project Description">{project.description}</Descriptions.Item>
+      <Descriptions.Item label="Tech used">
+        {project.assigned_skills?.length && project.assigned_skills.map((skill, i) => {
+          return (i + 1) === (project.assigned_skills?.length) ? skill.name : skill.name + ', '
+        })}
+      </Descriptions.Item>
+      {project.date && <Descriptions.Item label="Date released">{`${moment(project.date).format('MMMM YYYY')}`}</Descriptions.Item>}
       <Descriptions.Item label="Status">
-        <Badge status='success' text='Running' />
+        {isDeployed ? <Badge status='success' text='Running' /> : <Badge status='error' text='Not deployed or down' />}
       </Descriptions.Item>
     </Descriptions>
   )
@@ -52,7 +59,7 @@ const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
                 <ProjectCarousel pictures={project.pictures ?? []} />
               </Row>
               <div>
-                <ProjectDescriptions />
+                <ProjectDescriptions project={project} />
               </div>
             </Col>
             <Col className={styles.ColumnPadding} span={3} />

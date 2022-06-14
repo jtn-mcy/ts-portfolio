@@ -7,6 +7,7 @@ const projectData = [
     gitHub: 'https://github.com/NguyenJohnnyT/Tamagacha',
     deploy: 'https://tamagacha.herokuapp.com',
     pictures: ['https://i.imgur.com/0W4Icb9.png'],
+    date: new Date(2021, 9),
     user_id: 1
   },
   {

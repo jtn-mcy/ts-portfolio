@@ -51,6 +51,19 @@ export const useGetUserProject: (id: string) => UseQueryResult<Project, Error> =
     retry: false
   })
 
+export const useGetDeployStatus: (url?: string) => UseQueryResult<{ success: boolean }, Error> = (url) =>
+  useQuery('deployment status', async () => {
+    if (!url) return { success: false }
+    console.log(`Checking if ${url} is deloyed...`)
+
+    const res = await fetch(url);
+
+    if (res.status === 200) return { success: true }
+    else return { success: false }
+  }, {
+    retry: false
+  })
+
 //** Unsplash API */
 export type Photo = {
   id: number;
