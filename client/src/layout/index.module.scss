@@ -1,5 +1,6 @@
 @import "../styles/_global.scss";
 @import '../styles/_responsive.scss';
+@import "../styles/variables";
 
 .Header {
   display: flex;
@@ -10,15 +11,23 @@
 .Content {
   position: relative;
   top: 0px;
-  min-height: 89vh;
+  min-height: 88vh;
   padding-left: 2px;
-    padding-right: 2px;
+  padding-right: 2px;
   background-color: darkgrey;
   color: black;
 }
 
 .Footer {
-  align-items: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: $header
+}
+
+.Layout {
+  height: 99vh;
 }
 
 .Logo {
@@ -38,6 +47,21 @@
 
 .Sider {
   overflow: auto;
-  height: 91vh;
+  height: 88vh;
   scrollbar-color: grey;
+}
+
+.Socials {
+  width: 300px;
+  border-radius: 2px;
+  padding: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-card-light;
+}
+
+.Socials img {
+  height: 40px
 }
