@@ -72,6 +72,9 @@ const About: React.FC = () => {
               408-641-5559
             </Text>
             . This portfolio repo is hosted at <Link target='_blank' className={styles.Link} href="https://github.com/NguyenJohnnyT/ts-portfolio">GitHub</Link>.
+            <br/>
+            <br/>
+            Checkout my socials at the footer!
           </Paragraph>
         </Col>
       </Row>
