@@ -4,6 +4,8 @@ import me3 from './me/me3.png'
 import me4 from './me/me4.png'
 import eeveeFavicon from './eeveeFavicon.png'
 import placeholderBG from './placeholderBG.png'
+import projectPlaceholder from './projectPlaceholder350x350.png'
+import svgs from './skill-svgs'
 
 export {
   me1,
@@ -11,5 +13,7 @@ export {
   me3,
   me4,
   eeveeFavicon,
-  placeholderBG
+  placeholderBG,
+  projectPlaceholder,
+  svgs
 }
