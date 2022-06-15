@@ -1,13 +1,10 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Row, Col, Card, Typography, Divider, Carousel } from 'antd'
-import { me1, me2, me3, me4 } from '../../assets/images'
+import { Row, Col, Card, Typography, Divider, Carousel, Tooltip } from 'antd'
+import { me1, me2, me3, me4, svgs } from '../../assets/images'
 
 const { Title, Paragraph, Link, Text } = Typography
 const { Grid } = Card
-
-const gridStyle = { width: '10%', alignItems: "center", border: 'none' }
-const arr = [1, 2, 3, 4, 1, 2, 2, 1, 23, 123, 132, 132, 21, 2, 2, 2]
 
 const PfpCarousel: React.FC = () => {
   const ContentStyle = { width: '100%', height: '100%' }
@@ -36,7 +33,14 @@ const About: React.FC = () => {
         <Col span={8} style={{ padding: '8px' }}>
           <Card cover={<PfpCarousel />}>
             <Card bordered={false}>
-              {arr && arr.map((_, index) => <Grid style={gridStyle}>Icon {index}</Grid>)}
+              {svgs.skills && Object.entries(svgs.skills).map(([name, svg]) => {
+               return (
+                 <Grid key={name} className={styles.Grid}>
+                    <Tooltip title={name}>
+                    <img alt={name} src={svg} />
+                </Tooltip>
+                  </Grid>
+              )})}
             </Card>
           </Card>
         </Col>

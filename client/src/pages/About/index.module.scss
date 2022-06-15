@@ -1,15 +1,32 @@
 @import '../../styles/variables';
+
 .CenterCard {
   margin: 0 5px 0 5px;
   height: 87vh;
   overflow: hidden;
   background-color: $background-card;
+}
+  
+.Link {
+  color: $link  !important;
+}
+
+.Link:hover {
+  color: $link-hover  !important;
   }
   
-  .Link {
-    color: $link  !important
-  }
-  
-  .Link:hover {
-    color: $link-hover  !important
+.Grid {
+  width: 25%;
+  display: flex;
+  background-color: $background-card-light;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.Grid img {
+  height: 100%;
+  width: 100%;
 }

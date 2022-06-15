@@ -4,7 +4,7 @@ import { useGetUserProject, Project } from '../../api'
 import { Col, Row, Carousel, Descriptions, Spin, Empty, Image } from 'antd';
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
-import placeholderCat from '../../assets/projectPlaceholder350x350.png'
+import { projectPlaceholder as placeholderCat } from '../../assets/images'
 import moment from 'moment'
 
 const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
