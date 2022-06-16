@@ -1,1 +1,1 @@
-export const CenterCard: string;
+export const HomeLayout: string;

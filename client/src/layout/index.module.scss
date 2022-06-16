@@ -18,14 +18,6 @@
   color: black;
 }
 
-.Footer {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  background-color: $header
-}
-
 .Layout {
   height: 99vh;
 }
@@ -47,21 +39,6 @@
 
 .Sider {
   overflow: auto;
-  height: 88vh;
+  height: 94vh;
   scrollbar-color: grey;
-}
-
-.Socials {
-  width: 300px;
-  border-radius: 2px;
-  padding: 5px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $background-card-light;
-}
-
-.Socials img {
-  height: 40px
 }

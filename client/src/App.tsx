@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import './styles/_global.scss';
 import Layout from './layout';
-import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import Socials from './components/Socials/Socials';
 import Home from './pages/Home';
 import About from './pages/About';
 import ProjectPage from './pages/Project';
@@ -15,9 +15,7 @@ const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <ProjectedContext>
       <Layout>
-        <Breadcrumbs params={[
-          //getParams here
-        ]} />
+          <Socials />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} /> 

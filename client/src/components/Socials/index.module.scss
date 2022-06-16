@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.SocialsWrapper {
+  background-color: $background-card;
+  height: 30px;
+  margin: 5px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Socials {
+  width: 300px;
+  border-radius: 2px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-card-light;
+
+  img {
+    height: 18px
+  }
+}
