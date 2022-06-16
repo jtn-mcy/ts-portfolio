@@ -64,7 +64,7 @@ const About: React.FC = () => {
           <Divider />
           <Title level={3}>Contact me:</Title>
           <Paragraph>
-            I am available for conversation through <Link>
+            I am available for conversation through <Link target='_blank' className={styles.Link} href="https://www.linkedin.com/in/johnny-truc-nguyen/">
               LinkedIn
             </Link>
             , my email <Text type='success'>johnnytrucnguyen@gmail.com </Text>

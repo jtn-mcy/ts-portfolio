@@ -17,7 +17,7 @@ const ProjectCards: React.FC<{ project: Project }> = ({ project }) => {
 
   const handleClick = () => {
     setProjectId(project.id.toString())
-    navigate(`projects/${project.id}`)
+    navigate(`/projects/${project.id}`)
   }
 
   return (
