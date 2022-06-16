@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Row, Col, Card, Typography, Divider, Carousel, Tooltip } from 'antd'
+import { Row, Col, Card, Typography, Divider, Carousel, Tooltip, Image, Spin } from 'antd'
 import { me1, me2, me3, me4, svgs } from '../../assets/images'
 
 const { Title, Paragraph, Link, Text } = Typography
@@ -11,16 +11,16 @@ const PfpCarousel: React.FC = () => {
   return (
     <Carousel autoplay>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me1} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me1} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me2} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me2} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me3} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me3} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me4} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me4} />
       </div>
     </Carousel>
   )
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                return (
                  <Grid key={name} className={styles.Grid}>
                     <Tooltip title={name}>
-                    <img alt={name} src={svg} />
+                     <Image placeholder={<Spin />} preview={false} alt={name} src={svg} />
                 </Tooltip>
                   </Grid>
               )})}
