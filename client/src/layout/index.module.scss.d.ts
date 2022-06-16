@@ -1,5 +1,4 @@
 export const Content: string;
-export const Footer: string;
 export const Header: string;
 export const Layout: string;
 export const Logo: string;

@@ -3,6 +3,7 @@
 .BigProjectCard {
   max-height: 600px;
   max-width: 400px;
+  height: 100%;
   background-color: $background-card-picture;
   border-radius: 5% 5% 1% 1%;
 }
@@ -13,11 +14,24 @@
 
 .BigProjectCard:hover {
   cursor: pointer;
-  box-sizing: 5px 3px 3px $background-card-picture;
+  animation-name: cardhover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards
 }
 
 .BigProjectCard img {
   height: 300px;
   width: 100%;
   border: 2px black solid;
+}
+
+@keyframes cardhover {
+  from {
+    box-shadow: 10px 5px 5px $background-card-body;
+  }
+
+  to {
+  box-shadow: 5px 3px 3px $background-card-body;
+
+  }
 }

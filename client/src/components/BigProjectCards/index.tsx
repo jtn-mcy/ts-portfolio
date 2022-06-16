@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
-import { Card, Empty, Spin, Row, Col } from 'antd'
+import { Card, Empty, Spin, Row, Col, Image, Typography } from 'antd'
 import { Project, useGetUserProjects } from '../../api'
 import { projectPlaceholder } from '../../assets/images'
 import styles from './index.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { ProjectContext } from '../../context/selectedProject'
+
+const {Text, Title } = Typography
 
 const BigProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   const navigate = useNavigate();
@@ -22,11 +24,12 @@ const BigProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       className={styles.BigProjectCard}
       key={project.id}
       title={
-        <img alt={project.name} src={project.pictures ? project.pictures[0] : projectPlaceholder} />
+        <Image preview={false} style={{ height: '100%', width: '100%' }} alt={project.name} src={project.pictures ? project.pictures[0] : projectPlaceholder} />
       }
       onClick={handleClick}
     >
-      {project.description}
+      <Title style={{color: 'black'}} level={3}>{project.name}</Title>
+      <Text style={{color: 'black'}}>{project.description}</Text>
     </Card>
   )
 }

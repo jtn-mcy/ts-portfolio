@@ -11,16 +11,16 @@ const PfpCarousel: React.FC = () => {
   return (
     <Carousel autoplay>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me1} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me1} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me2} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me2} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me3} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me3} />
       </div>
       <div>
-        <img style={ContentStyle} alt='pfp' src={me4} />
+        <Image placeholder={<Spin />} preview={false} style={ContentStyle} alt='pfp' src={me4} />
       </div>
     </Carousel>
   )
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                return (
                  <Grid key={name} className={styles.Grid}>
                     <Tooltip title={name}>
-                     <Image style={{ width: '100%', height: '100%' }} placeholder={<Spin />} alt={name} src={svg} preview={false} />
+                     <Image placeholder={<Spin />} preview={false} alt={name} src={svg} />
                 </Tooltip>
                   </Grid>
               )})}

@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className={styles.CenterCard} style={style}>
+    <div className={styles.HomeLayout} style={style}>
       <HomeTitle />
     </div>
   )
