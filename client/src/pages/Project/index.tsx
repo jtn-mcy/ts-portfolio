@@ -1,16 +1,17 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import { useGetUserProject, Project } from '../../api'
-import { Col, Row, Carousel, Descriptions, Spin, Empty, Image } from 'antd';
+import { Col, Row, Carousel, Descriptions, Spin, Empty, Image, Typography } from 'antd';
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
 import { projectPlaceholder as placeholderCat } from '../../assets/images'
+import BigProjectCards from '../../components/ProjectCards';
 import moment from 'moment'
 
 const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
 
   return (
-    <Descriptions title={project.name} bordered column={1}>
+    <Descriptions title={<Typography.Title level={2}>{project.name}</Typography.Title>} bordered column={1}>
       <Descriptions.Item label="Project Description">{project.description}</Descriptions.Item>
       <Descriptions.Item label="Tech used">
         {project.assigned_skills?.length && project.assigned_skills.map((skill, i) => {
@@ -18,8 +19,8 @@ const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
         })}
       </Descriptions.Item>
       {project.date && <Descriptions.Item label="Date released">{`${moment(project.date).format('MMMM YYYY')}`}</Descriptions.Item>}
-      {project.gitHub && <Descriptions.Item label="Github"><a href={project.gitHub}>Github</a></Descriptions.Item>}
-      {project.deploy && <Descriptions.Item label="Deployment"><a href={project.deploy}>Deployment</a></Descriptions.Item>}
+      {project.gitHub && <Descriptions.Item label="Github"><a className={styles.Link} href={project.gitHub}>Github</a></Descriptions.Item>}
+      {project.deploy && <Descriptions.Item label="Deployment"><a className={styles.Link} href={project.deploy}>Deployment</a></Descriptions.Item>}
 
     </Descriptions>
   )
@@ -75,13 +76,15 @@ const ProjectPage: React.FC = () => {
   useEffect(() => {
     if (projectId) {
       setId(projectId)
+    } else {
+      setId('')
     }
   }, [projectId])
   return (
     id ? (
       <ProjectGrid id={id} />
     ) : (
-      <div>Projects cards here</div>
+        <BigProjectCards />
     ) 
   )
 }

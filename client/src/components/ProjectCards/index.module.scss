@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.BigProjectCard {
+  max-height: 600px;
+  max-width: 400px;
+  background-color: $background-card-picture;
+  border-radius: 5% 5% 1% 1%;
+}
+
+.BigProjectCard {
+  box-shadow: 10px 5px 5px $background-card-body;
+}
+
+.BigProjectCard:hover {
+  cursor: pointer;
+  box-sizing: 5px 3px 3px $background-card-picture;
+}
+
+.BigProjectCard img {
+  height: 300px;
+  width: 100%;
+  border: 2px black solid;
+}
