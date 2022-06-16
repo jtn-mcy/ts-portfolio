@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { Row, Col, Card, Typography, Divider, Carousel, Tooltip } from 'antd'
+import { Row, Col, Card, Typography, Divider, Carousel, Tooltip, Image, Spin } from 'antd'
 import { me1, me2, me3, me4, svgs } from '../../assets/images'
 
 const { Title, Paragraph, Link, Text } = Typography
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                return (
                  <Grid key={name} className={styles.Grid}>
                     <Tooltip title={name}>
-                    <img alt={name} src={svg} />
+                     <Image style={{ width: '100%', height: '100%' }} placeholder={<Spin />} alt={name} src={svg} preview={false} />
                 </Tooltip>
                   </Grid>
               )})}
@@ -64,7 +64,7 @@ const About: React.FC = () => {
           <Divider />
           <Title level={3}>Contact me:</Title>
           <Paragraph>
-            I am available for conversation through <Link>
+            I am available for conversation through <Link target='_blank' className={styles.Link} href="https://www.linkedin.com/in/johnny-truc-nguyen/">
               LinkedIn
             </Link>
             , my email <Text type='success'>johnnytrucnguyen@gmail.com </Text>
