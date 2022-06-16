@@ -5,7 +5,7 @@ import { Col, Row, Carousel, Descriptions, Spin, Empty, Image, Typography } from
 import styles from './index.module.scss'
 import { ProjectContext } from '../../context/selectedProject';
 import { projectPlaceholder as placeholderCat } from '../../assets/images'
-import BigProjectCards from '../../components/ProjectCards';
+import BigProjectCards from '../../components/BigProjectCards';
 import moment from 'moment'
 
 const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
