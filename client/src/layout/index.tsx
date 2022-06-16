@@ -36,6 +36,14 @@ const items: MenuProps['items'] = [
         Projects
       </Link>
     )
+  },
+  {
+    key: 'timeline',
+    label: (
+      <Link to='timeline'>
+        Timeline
+      </Link>
+    )
   }
 ]
 
