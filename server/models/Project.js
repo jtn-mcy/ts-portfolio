@@ -31,6 +31,9 @@ Project.init(
     date: {
       type: DataTypes.DATE
     },
+    custom_order: {
+      type: DataTypes.INTEGER
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
