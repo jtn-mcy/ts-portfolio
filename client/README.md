@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# TS-Portfolio Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Bootstrapped with React!
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the client directory, you can run:
 
 ### `npm start`
 
