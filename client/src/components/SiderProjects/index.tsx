@@ -8,10 +8,11 @@ import styles from './index.module.scss'
 const SiderProjects: React.FC = () => {
   const { data: projects } = useGetUserProjects();
   const navigate = useNavigate();
+
   return (
     <>
       <Card className={styles.Project} onClick={() => navigate('/projects')}>Projects</Card>
-      {projects && projects.map(project => <ProjectCards key={project.id} project={project} />)}
+      {projects && projects.sort((a, b) => b.custom_order - a.custom_order).map(project => <ProjectCards key={project.id} project={project} />)}
     </>
   )
 }

@@ -15,12 +15,13 @@ export type Skill = {
 
 export type Project = {
   id: number
+  custom_order: number
   name: string
   description: string
+  date: Date
+  pictures: string[]
   gitHub?: string
   deploy?: string
-  pictures: string[]
-  date?: string
   assigned_skills?: Skill[]
 }
 

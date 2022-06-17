@@ -16,7 +16,7 @@ Project.init(
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING(272),
+      type: DataTypes.STRING(500),
       allowNull: false,
     },
     gitHub: {
@@ -30,6 +30,9 @@ Project.init(
     },
     date: {
       type: DataTypes.DATE
+    },
+    custom_order: {
+      type: DataTypes.INTEGER
     },
     user_id: {
       type: DataTypes.INTEGER,
