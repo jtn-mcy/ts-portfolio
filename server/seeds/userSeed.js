@@ -5,7 +5,7 @@ const userData = [
   {
     username: "jtn_admin",
     email: "johnnytrucnguyen@gmail.com",
-    password: process.env.admin_PW,
+    password: process.env.ADMIN_PW,
     is_admin: true
   },
   {
