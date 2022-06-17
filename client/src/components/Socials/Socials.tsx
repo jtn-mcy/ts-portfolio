@@ -9,7 +9,7 @@ const Socials: React.FC = () => {
   const { LinkedIn, Resume, Medium, GitHub } = svgs.socials
   return (
     <div className={styles.SocialsWrapper}>
-      <Text type='warning'>Johnny Portfolio ©2022 - Styled by Ant Design</Text>
+      <Text type='warning'>Johnny Portfolio ©2022</Text>
       <div className={styles.Socials}>
         <Space size='large' direction='horizontal'>
           <a href='https://www.linkedin.com/in/johnny-truc-nguyen/' rel='noreferrer' target='_blank'>
