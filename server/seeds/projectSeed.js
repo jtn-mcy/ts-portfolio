@@ -44,7 +44,6 @@ const projectData = [
     description: "Interact with a tech blog, create an account safely with a username and salted and hashed password, view and comment on posts, or make your own blog post that other users can interact with!",
     pictures: ["https://i.imgur.com/CskMFqF.png", 'https://imgur.com/5VqjtuQ', 'https://i.imgur.com/eHe1KJP.png', 'https://i.imgur.com/tMCQ0Xw.png'],
     date: new Date(2021, 6),
-
     user_id: 1
   },
   {
@@ -87,7 +86,7 @@ const projectData = [
     name: "Ts-portfolio",
     gitHub: "https://github.com/NguyenJohnnyT/ts-portfolio",
     deploy: "https://jtn-portfolio-ts.herokuapp.com",
-    description: "Revamped portfolio built with TypeScript and React using Ant Design as the styling framework and React Query for api calls, with SCSS as the main css component. I utilized what I learned from my time at Kernel to improve upon the original product.",
+    description: "Revamped portfolio built with TypeScript and React using Ant Design as the styling framework and React Query for api calls, with SCSS as the main css component. I utilized what I learned from my time at Kernel to improve upon the original portfolio from coding bootcamp.",
     pictures: [],
     date: new Date(2021, 5),
     user_id: 1

@@ -375,6 +375,147 @@ const projectSkillData = [
     project_id: 6,
     skill_id: 39
   },
+  {
+    project_id: 7,
+    skill_id: 40
+  },
+  {
+    project_id: 7,
+    skill_id: 41
+  },
+  {
+    project_id: 7,
+    skill_id: 42
+  },
+  {
+    project_id: 7,
+    skill_id: 43
+  },
+  {
+    project_id: 7,
+    skill_id: 44
+  },
+  {
+    project_id: 8,
+    skill_id: 1
+  },
+  {
+    project_id: 8,
+    skill_id: 20
+  },
+  {
+    project_id: 8,
+    skill_id: 21
+  },
+  {
+    project_id: 8,
+    skill_id: 22
+  },
+  {
+    project_id: 8,
+    skill_id: 45
+  },
+  {
+    project_id: 9,
+    skill_id: 4
+  },
+  {
+    project_id: 9,
+    skill_id: 25
+  },
+  {
+    project_id: 9,
+    skill_id: 40
+  },
+  {
+    project_id: 9,
+    skill_id: 46
+  },
+  {
+    project_id: 9,
+    skill_id: 47
+  },
+  {
+    project_id: 9,
+    skill_id: 48
+  },
+  {
+    project_id: 9,
+    skill_id: 49
+  },
+  {
+    project_id: 9,
+    skill_id: 1
+  },
+  {
+    project_id: 10,
+    skill_id: 50
+  },
+  {
+    project_id: 10,
+    skill_id: 20
+  },
+  {
+    project_id: 10,
+    skill_id: 22
+  },
+  {
+    project_id: 10,
+    skill_id: 24
+  },
+  {
+    project_id: 10,
+    skill_id: 25
+  },
+  {
+    project_id: 10,
+    skill_id: 26
+  },
+  {
+    project_id: 10,
+    skill_id: 51
+  },
+  {
+    project_id: 10,
+    skill_id: 52
+  },
+  {
+    project_id: 10,
+    skill_id: 53
+  },
+  {
+    project_id: 10,
+    skill_id: 54
+  },
+  {
+    project_id: 10,
+    skill_id: 55
+  },
+  {
+    project_id: 10,
+    skill_id: 56
+  },
+  {
+    project_id: 10,
+    skill_id: 2
+  },
+  {
+    project_id: 10,
+    skill_id: 13,
+  },
+  {
+    project_id: 10,
+    skill_id: 10
+  },
+  {
+    project_id: 10,
+    skill_id: 11
+  },
+  {
+    project_id: 10,
+    skill_id: 16
+  },
+
 ];
 
 const seedProjectSkill = () => ProjectSkill.bulkCreate(projectSkillData);

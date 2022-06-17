@@ -121,8 +121,60 @@ const skillData = [
   },
   {
     name: "pm2"
-  }
+  },
   //|40 below
+  {
+    name: "Python"
+  },
+  {
+    name: "Flask"
+  },
+  {
+    name: "Jinja2"
+  },
+  {
+    name: "PyMySQL"
+  },
+  {
+    name: "SQLAlchemy"
+  },
+  {
+    name: "jest"
+  },
+  {
+    name: "Bot"
+  },
+  {
+    name: "SAP Cloud services"
+  },
+  {
+    name: "Discord"
+  },
+  {
+    name: "Discord Slash Commands"
+  },
+  //|50 below
+  {
+    name: "Typescript"
+  },
+  {
+    name: "React Query"
+  },
+  {
+    name: "Ant Design"
+  },
+  {
+    name: "SASS"
+  },
+  {
+    name: "PostgreSQL"
+  },
+  {
+    name: "React-Router-dom"
+  },
+  {
+    name: "moment"
+  },
 ];
 
 const seedSkill = () => Skill.bulkCreate(skillData);
