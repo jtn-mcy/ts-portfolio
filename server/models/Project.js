@@ -16,7 +16,7 @@ Project.init(
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING(272),
+      type: DataTypes.STRING(500),
       allowNull: false,
     },
     gitHub: {
