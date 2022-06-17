@@ -41,9 +41,9 @@ const ProfessionalTimeline: React.FC = () => {
 const PersonalTimeline: React.FC = () => {
   return (
     <Space className={styles.CenterCard} align='center' direction='vertical' style={{ padding: '20px' }}>
-      <Title level={3}>Personal Timeline</Title>
+      <Title level={3}>Personal 🙂 Timeline</Title>
       <AntTimeline mode='left'>
-        <Item label='Many a time ago'>👶 Johnny is here! (In San Jose, CA)</Item>
+        <Item label='Many a time ago'>👶 Johnny is here! (San Jose, California)</Item>
         <Item label='10 January 1995'>🎹 Start playing the piano</Item>
         <Item label='1995'>🚚 Move to Santa Clara, CA</Item>
         <Item label='1996'>✈️ Visit London, UK & Paris, France & Venice, Italy & Geneva, Switzerland in Europe</Item>
