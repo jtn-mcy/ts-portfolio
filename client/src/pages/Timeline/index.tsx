@@ -38,6 +38,23 @@ const ProfessionalTimeline: React.FC = () => {
   )
 }
 
+const PersonalTimeline: React.FC = () => {
+  return (
+    <Space className={styles.CenterCard} align='center' direction='vertical' style={{ padding: '20px' }}>
+      <Title level={3}>Personal Timeline</Title>
+      <AntTimeline mode='left'>
+        <Item label='Many a time ago'>👶 Johnny is here! (In San Jose, CA)</Item>
+        <Item label='10 January 1995'>🎹 Start playing the piano</Item>
+        <Item label='1995'>🚚 Move to Santa Clara, CA</Item>
+        <Item label='1996'>✈️ Visit London, UK & Paris, France & Venice, Italy & Geneva, Switzerland in Europe</Item>
+        <Item label='2011'>🎓 Graduate from San Jose State University with a Major in Chemistry</Item>
+        <Item label='2013'>🚚 Attend Albany College of Pharmacy and Health Sciences in New York with a degree in Pharmacy</Item>
+        <Item label='2017'>🎓 Graduate from ACPHS</Item>
+        <Item label='2018'>✈️ Visit Osaka & Kobe & Kyoto & Tokyo, Japan</Item>
+        <Item label='2020'>Covid hits and career swap is considered</Item>
+        <Item label='2021'>👨‍💻 Start professional timeline</Item>
+        <Item label='2021'>🎓 Graduate UC Berkeley Coding Bootcamp</Item>
+        <Item label='2022'>🚚 Move to Los Angeles, CA for new job</Item>
       </AntTimeline>
     </Space>
   )
@@ -47,6 +64,7 @@ const Timeline: React.FC = () => {
   return (
     <Space>
       <ProfessionalTimeline />
+      <PersonalTimeline />
     </Space>
   )
 }
