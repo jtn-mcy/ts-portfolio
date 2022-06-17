@@ -1,29 +1,33 @@
 @import '../../styles/variables';
 
-.BigProjectCard {
-  max-height: 600px;
-  max-width: 400px;
-  height: 100%;
-  background-color: $background-card-picture;
-  border-radius: 5% 5% 1% 1%;
+.Wrapper {
+  overflow: hidden auto;
+  padding: 30px;
+  height: 91vh;
+
+  .BigProjectCard {
+    max-height: 600px;
+    max-width: 400px;
+    height: 100%;
+    background-color: $background-card-picture;
+    border-radius: 5% 5% 1% 1%;
+    box-shadow: 10px 5px 5px $background-card-body;
+    
+    &:hover {
+      cursor: pointer;
+      animation-name: cardhover;
+      animation-duration: 1s;
+      animation-fill-mode: forwards
+    }
+    
+    img {
+      height: 300px;
+      width: 100%;
+      border: 2px black solid;
+    }
+  }  
 }
 
-.BigProjectCard {
-  box-shadow: 10px 5px 5px $background-card-body;
-}
-
-.BigProjectCard:hover {
-  cursor: pointer;
-  animation-name: cardhover;
-  animation-duration: 1s;
-  animation-fill-mode: forwards
-}
-
-.BigProjectCard img {
-  height: 300px;
-  width: 100%;
-  border: 2px black solid;
-}
 
 @keyframes cardhover {
   from {

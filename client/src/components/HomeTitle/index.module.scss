@@ -1,4 +1,29 @@
 .HomeTitle {
   background-color: rgba(0, 0, 0, 0.80);
   max-width: 500px;
+  height: 130px;
+
+  .itme{
+    position:absolute;
+    bottom: 0px;
+    left: 5%;
+    height: 50px
+  }
+
+  &:hover {
+    .itme {
+      animation: slide 1s forwards;
+    }
+  }
+}
+
+@keyframes slide {
+  from {
+    bottom: 0px;
+    left: 5%;
+  }
+  to {
+    bottom:0px;
+    left: 80%
+  }
 }

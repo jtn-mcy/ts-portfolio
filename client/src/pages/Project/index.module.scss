@@ -1,27 +1,34 @@
 @import '../../styles/variables';
-.Row {
-  height: 89vh;
-  margin: 0 2px 0 2px
-}
 
-.ColumnPadding {
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 40vh;
-}
-.CarouselWrapper {
-  max-height: 800px;
-  width: 800px;
-  text-align: center;
 
-  img {
-    margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-}
 .Link {
   color: $link-lightmode  !important;
 }
 
 .Link:hover {
   color: $link-hover  !important;
+}
+
+.Wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 91vh;
+
+  .Row {
+    height: 89vh;
+    margin: 0 2px 0 2px;
+    
+    .ColumnPadding {
+      background-color: rgba(0, 0, 0, 0.8);
+      height: 100vh;
+    }
+    .CarouselWrapper {
+      width: 800px;
+      text-align: center;
+    
+      img {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }
+  }
 }

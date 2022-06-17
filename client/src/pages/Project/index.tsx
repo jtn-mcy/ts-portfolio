@@ -29,9 +29,9 @@ const ProjectDescriptions: React.FC<{ project: Project }> = ({ project }) => {
 const ProjectCarousel: React.FC<{ pictures: string[] }> = ({ pictures }) => {
   return (
     <div className={styles.CarouselWrapper}>
-      <Carousel >
+      <Carousel autoplay>
         {pictures.length ? pictures.map((picture, index) => (
-          <Image key={index} style={{ width: '100%' }} alt='project' src={picture} preview={false} />
+          <Image key={index}  alt='project' src={picture} preview={false} />
       )) : (
             <Image alt='placeholder' src={placeholderCat} preview={false} />
       )}
@@ -52,7 +52,7 @@ const ProjectGrid: React.FC<{ id: string }> = ({ id }) => {
   return (
     isLoading ? <Spin /> :
       project ? (
-        <div style={{ overflowX: 'hidden', overflowY: 'auto' }}>
+        <div className={styles.Wrapper}>
           <Row className={styles.Row} gutter={32} >
             <Col className={styles.ColumnPadding} span={3} />
             <Col span={18} >
