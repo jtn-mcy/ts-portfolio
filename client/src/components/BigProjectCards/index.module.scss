@@ -6,24 +6,28 @@
   height: 100%;
   background-color: $background-card-picture;
   border-radius: 5% 5% 1% 1%;
-}
-
-.BigProjectCard {
   box-shadow: 10px 5px 5px $background-card-body;
+  &:hover {
+    cursor: pointer;
+    animation-name: cardhover;
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+  }
+  
+  img {
+    height: 300px;
+    width: 100%;
+    border: 2px black solid;
+  }
+  }
+  
+  .Wrapper {
+  overflow-x: 'hidden';
+  overflow-y: 'auto';
+  padding: 30px;
+  height: 91vh
 }
 
-.BigProjectCard:hover {
-  cursor: pointer;
-  animation-name: cardhover;
-  animation-duration: 1s;
-  animation-fill-mode: forwards
-}
-
-.BigProjectCard img {
-  height: 300px;
-  width: 100%;
-  border: 2px black solid;
-}
 
 @keyframes cardhover {
   from {

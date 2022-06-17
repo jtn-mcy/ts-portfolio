@@ -38,7 +38,7 @@ const BigProjectCards: React.FC = () => {
   const { data: projects, isLoading } = useGetUserProjects();
 
   return (
-    <div style={{ overflowX: 'hidden', padding: '30px' }}>
+    <div className={styles.Wrapper}>
       <Row gutter={[16, 16]}>
         {isLoading ? (
           <Spin />
@@ -46,7 +46,7 @@ const BigProjectCards: React.FC = () => {
           projects ? (
             projects.map(project => {
               return (
-                <Col span={6} >
+                <Col sm={24} md={12} lg={6} >
                   <BigProjectCard project={project} />
                 </Col>
               )
