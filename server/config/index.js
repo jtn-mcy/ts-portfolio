@@ -5,7 +5,7 @@ let sequelize;
 
 if (process.env.DATABASE_URL) {
   console.log("Connect to Heroku Postgres...");
-  sequelize = new Sequelize(process.env.DATABASE_URL);
+  sequelize = new Sequelize(process.env.DATABASE_URL+'?sslmode=require');
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
