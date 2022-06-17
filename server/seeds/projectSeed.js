@@ -96,7 +96,7 @@ const projectData = [
     gitHub: "https://github.com/NguyenJohnnyT/ts-portfolio",
     deploy: "https://jtn-portfolio-ts.herokuapp.com",
     description: "Revamped portfolio built with TypeScript and React using Ant Design as the styling framework and React Query for api calls, with SCSS as the main css component. I utilized what I learned from my time at Kernel to improve upon the original portfolio from coding bootcamp.",
-    pictures: [],
+    pictures: ['https://i.imgur.com/PPQkwoN.png', 'https://i.imgur.com/2u6wX49.png', 'https://i.imgur.com/QzMFWQS.png', 'https://i.imgur.com/W0c7Iay.png'],
     custom_order: 10,
     date: new Date(2022, 5),
     user_id: 1
