@@ -2,9 +2,13 @@ const express = require('express');
 const path = require('path');
 const sequelize = require('./config')
 const routes = require('./controllers')
-
+const cron = require('node-cron') //keep heroku server up at 10 and 40 minutes
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+cron.schedule('10,40 * * * *', () => {
+  console.log('Keep server from sleeping every 10th and 40th minute of the hour.')
+})
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
