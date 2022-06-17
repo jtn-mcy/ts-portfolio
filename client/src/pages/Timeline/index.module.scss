@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.CenterCard {
+  margin: 0 5px 0 5px;
+  border-radius: 5px;
+  height: 90vh;
+  overflow: hidden;
+  background-color: $background-card;
+}
+
+.Link {
+  color: $link  !important;
+}
+
+.Link:hover {
+  color: $link-hover  !important;
+}

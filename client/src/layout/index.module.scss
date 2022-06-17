@@ -1,0 +1,46 @@
+@import "../styles/_global.scss";
+@import '../styles/_responsive.scss';
+@import "../styles/variables";
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  max-height: 10vh;
+}
+
+.Content {
+  position: relative;
+  top: 0px;
+  max-height: 95vh;
+  height: 100%;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: darkgrey;
+  color: black;
+}
+
+.Layout {
+  height: 99vh;
+}
+
+.Logo {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin: 15px 15px 16px 0;
+}
+
+.Logo:hover {
+  cursor: pointer
+}
+
+.Menu {
+  width: 100%;
+}
+
+.Sider {
+  overflow: auto;
+  max-height: 95vh;
+  height: 100%;
+  scrollbar-color: grey;
+}

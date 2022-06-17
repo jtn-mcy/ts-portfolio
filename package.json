@@ -1,0 +1,27 @@
+{
+  "name": "ts-portfolio",
+  "version": "1.0.0",
+  "description": "Johnny Nguyen portfolio made with React, Express, Postgres, Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "setup": "cd server/ && npm install && npm run seed && cd ../client/ && npm install",
+    "seed": "cd server && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenJohnnyT/ts-portfolio.git"
+  },
+  "keywords": [
+    "johnny",
+    "nguyen",
+    "portfolio"
+  ],
+  "author": "Johnny Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NguyenJohnnyT/ts-portfolio/issues"
+  },
+  "homepage": "https://github.com/NguyenJohnnyT/ts-portfolio#readme"
+}

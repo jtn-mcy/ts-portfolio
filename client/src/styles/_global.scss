@@ -1,2 +1,19 @@
 @import './_normalize.scss';
-@import './_responsive.scss'
+@import './_responsive.scss';
+@import '../../node_modules/antd/dist/antd.dark.css';
+@import './variables';
+
+body {
+  overflow-x: hidden
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d89614
+}
