@@ -24,7 +24,7 @@ const BigProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       className={styles.BigProjectCard}
       key={project.id}
       title={
-        <Image preview={false} style={{ height: '100%', width: '100%' }} alt={project.name} src={project.pictures ? project.pictures[0] : projectPlaceholder} />
+        <Image preview={false} style={{ height: '100%', width: '100%' }} alt={project.name} src={project.pictures.length ? project.pictures[0] : projectPlaceholder} />
       }
       onClick={handleClick}
     >
