@@ -1,13 +1,15 @@
 {
   "name": "ts-portfolio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Johnny Nguyen portfolio made with React, Express, Postgres, Nodejs",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
+    "build": "cd client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "cd server && npm i && cd ../client && npm i",
     "setup": "cd server/ && npm install && npm run seed && cd ../client/ && npm install",
-    "seed": "cd server && npm run seed"
+    "seed": "cd server && node server/seeds/index.js"
   },
   "repository": {
     "type": "git",
