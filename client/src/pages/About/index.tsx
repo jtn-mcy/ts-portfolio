@@ -45,7 +45,10 @@ const About: React.FC = () => {
           </Card>
         </Col>
         <Col span={16} style={{ padding: '16px' }}>
-          <Title> Johnny Nguyen</Title>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <Title level={1} style={{ margin: '0 0 15px 0' }}> Johnny Nguyen</Title>
+            <Title level={3} style={{ margin: '0 0 15px 0' }}> ⬆️ My socials!</Title>
+          </div>
           <Title level={3}> Current position </Title>
           <Paragraph>
             I am formerly a front-end engineer for <Link className={styles.Link} target="_blank" href='http://www.kernel.com'>Kernel</Link> and currently a part time teaching assistant for <Link className={styles.Link} target="_blank" href='https://bootcamp.berkeley.edu/coding/'>UC Berkeley Extension Coding Boot Camp</Link>. Open for new opportunities as a front-end/UI/UX developer!
@@ -74,7 +77,7 @@ const About: React.FC = () => {
             . This portfolio repo is hosted at <Link target='_blank' className={styles.Link} href="https://github.com/NguyenJohnnyT/ts-portfolio">GitHub</Link>.
             <br/>
             <br/>
-            Checkout my socials at the footer!
+            Checkout my socials on the top right!
           </Paragraph>
         </Col>
       </Row>
