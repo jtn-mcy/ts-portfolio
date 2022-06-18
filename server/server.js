@@ -6,8 +6,8 @@ const cron = require('node-cron') //keep heroku server up at 10 and 40 minutes
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-cron.schedule('10,40 * * * *', () => {
-  console.log('Keep server from sleeping every 10th and 40th minute of the hour.')
+cron.schedule('0,10,20,30,40,50 * * * *', () => {
+  console.log('Keep server from sleeping every ten minutes.')
 })
 
 app.use(express.json());
