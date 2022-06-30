@@ -11,6 +11,7 @@
     "include-media": "^1.4.10",
     "moment": "^2.29.3",
     "normalize-scss": "^7.0.1",
+    "nth-check": "^2.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-query": "^3.39.1",
