@@ -25,6 +25,7 @@ import SASS from './sass.svg';
 import Sequelize from './sequelize.svg';
 import SQL from './sql.svg';
 import TypeScript from './typescript.svg'
+import LinkOut from './linkOut.svg'
 
 type SocialSVG = {
   [key: string]: string
@@ -43,6 +44,7 @@ const svgs: BundledSVG = {
   socials: {
     GitHub,
     LinkedIn,
+    LinkOut,
     Resume,
     Medium
   },
