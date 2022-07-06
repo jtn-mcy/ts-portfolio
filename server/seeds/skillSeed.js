@@ -175,6 +175,9 @@ const skillData = [
   {
     name: "moment"
   },
+  {
+    name: "Redux"
+  },
 ];
 
 const seedSkill = () => Skill.bulkCreate(skillData);

@@ -100,6 +100,16 @@ const projectData = [
     custom_order: 10,
     date: new Date(2022, 5),
     user_id: 1
+  },
+  {
+    name: "Redux Trivia Game",
+    gitHub: "https://github.com/NguyenJohnnyT/Trivia-game",
+    deploy: "https://nguyenjohnnyt.github.io/Trivia-game/",
+    description: "A trivia game using redux to manage global state. Keep track of high scores locally and change your questions based on the category!",
+    pictures: ["https://i.imgur.com/D6dQMEu.png","https://i.imgur.com/WbfWXxG.png","https://i.imgur.com/1CN4ZeY.png","https://i.imgur.com/D6dQMEu.png"],
+    custom_order: 11,
+    date: new Date(2022, 5),
+    user_id: 1
   }
 ];
 

@@ -375,6 +375,7 @@ const projectSkillData = [
     project_id: 6,
     skill_id: 39
   },
+  //!Python newsfeed
   {
     project_id: 7,
     skill_id: 40
@@ -391,6 +392,7 @@ const projectSkillData = [
     project_id: 7,
     skill_id: 43
   },
+  //! React phys color
   {
     project_id: 7,
     skill_id: 44
@@ -415,6 +417,7 @@ const projectSkillData = [
     project_id: 8,
     skill_id: 45
   },
+  //! MCY liquipedia bot
   {
     project_id: 9,
     skill_id: 4
@@ -447,6 +450,7 @@ const projectSkillData = [
     project_id: 9,
     skill_id: 1
   },
+  //! ts portfolio
   {
     project_id: 10,
     skill_id: 50
@@ -515,7 +519,30 @@ const projectSkillData = [
     project_id: 10,
     skill_id: 16
   },
-
+  {
+    project_id: 11,
+    skill_id: 50
+  },
+  {
+    project_id: 11,
+    skill_id: 53
+  },
+  {
+    project_id: 11,
+    skill_id: 55
+  },
+  {
+    project_id: 11,
+    skill_id: 57
+  },
+  {
+    project_id: 11,
+    skill_id: 21
+  },
+  {
+    project_id: 11,
+    skill_id: 22
+  }
 ];
 
 const seedProjectSkill = () => ProjectSkill.bulkCreate(projectSkillData);
